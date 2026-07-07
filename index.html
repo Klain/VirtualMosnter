@@ -1,1 +1,43 @@
-<!doctype html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="theme-color" content="#9ead74"/><link rel="manifest" href="./manifest.webmanifest"/><link rel="stylesheet" href="./src/styles/app.css"/><title>LCD Pocket Creature</title></head><body><div id="app"></div><script type="module" src="./src/main.js"></script></body></html>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#9ead74" />
+    <link rel="stylesheet" href="./src/styles/app.css" />
+    <title>LCD Pocket Creature</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      if (window.location.protocol === 'file:') {
+        document.querySelector('#app').innerHTML = `
+          <main class="shell">
+            <section class="panel">
+              <h1>No abras este juego con doble clic</h1>
+              <p>
+                Chrome bloquea los módulos JavaScript y el manifest cuando la página se abre como
+                <code>file://</code>. Para evitar los errores CORS, ejecútalo desde un servidor local.
+              </p>
+              <ol>
+                <li>Abre una terminal en la carpeta del proyecto.</li>
+                <li>Ejecuta <code>npm run dev</code>.</li>
+                <li>Entra a <code>http://localhost:5173</code>.</li>
+              </ol>
+            </section>
+          </main>
+        `;
+      } else {
+        const manifest = document.createElement('link');
+        manifest.rel = 'manifest';
+        manifest.href = './manifest.webmanifest';
+        document.head.append(manifest);
+
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = './src/main.js';
+        document.body.append(script);
+      }
+    </script>
+  </body>
+</html>
