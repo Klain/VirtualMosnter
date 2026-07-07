@@ -1,0 +1,5 @@
+export const areas = [
+{id:'green_path',name:'Green Path',travelCost:2,encounters:[{id:'gp1',name:'Sprout Walker',species:'baby',boost:0},{id:'gp2',name:'Twig Kid',species:'child_a',boost:1,recruitNpc:'forager'},{id:'gp_boss',name:'Moss Boss',species:'adult_c',boost:2,boss:true,unlocksBuilding:'shop'}]},
+{id:'forest_lake',name:'Forest Lake',travelCost:3,encounters:[{id:'fl1',name:'Reed Bit',species:'child_b',boost:1},{id:'fl2',name:'Lake Guard',species:'adult_d',boost:2,recruitNpc:'nurse'},{id:'fl_boss',name:'Ripple Boss',species:'adult_d',boost:3,boss:true,unlocksBuilding:'clinic'}]},
+{id:'infinity_foothill',name:'Infinity Foothill',travelCost:4,encounters:[{id:'if1',name:'Stone Tot',species:'child_a',boost:2},{id:'if2',name:'Peak Strider',species:'adult_c',boost:3,recruitNpc:'keeper'},{id:'if_boss',name:'Infinity Boss',species:'perfect_j',boost:4,boss:true,unlocksBuilding:'storage'}]}
+];
